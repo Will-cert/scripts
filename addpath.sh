@@ -1,6 +1,6 @@
 
-read PATH_TO_ADD
-echo $PATH_TO_ADD
+read -r PATH_TO_ADD
+
 if [[ -d $PATH_TO_ADD ]]
 then 
     sed "s/export PATH=\"\(.*\)\"/export PATH=\"\1\:${PATH_TO_ADD//\//\\/}\"/g" ~/.bashrc
